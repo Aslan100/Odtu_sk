@@ -27,7 +27,7 @@
 		<script type="text/javascript" src="${linkPrefix}res/js/obj/district.js?ver=${verStr}"></script>
 		<script type="text/javascript" src="${linkPrefix}res/js/obj/address.js?ver=${verStr}"></script>
 		<script type="text/javascript" src="${linkPrefix}res/js/obj/location.js?ver=${verStr}"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwKkHsWOrKCk-BAeyeWXo898QUXaC5GTM&callback=initMap" async="true" defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=generatedkey" async="true" defer></script>
 	</head>
 	<body>
 		<div class="main_container">
