@@ -1,0 +1,520 @@
+@charset "UTF-8";
+
+h1
+{
+	font: 700 21px var(--system_header_font_family);
+	color: var(--system_black);
+	line-height: var(--system_line_height);
+	margin: 0px;
+	margin-bottom: 45px;
+}
+
+h2
+{
+	display: inline-block;
+	padding-bottom: 8px;
+	margin: 0px 0px 20px 0px;
+	font: 600 15px  var(--system_header_font_family);
+	color: var(--system_main_color);
+	line-height: var(--system_line_height);
+	border-bottom: 2px solid var(--system_red);
+}
+
+h3
+{
+	display: inline-block;
+	margin: 0px 0px 15px 0px;
+	font: 600 14px  var(--system_header_font_family);
+	color: var(--system_main_color);
+	line-height: var(--system_line_height);
+}
+
+p
+{
+	max-width: 400px;
+	margin: 0px 0px 5px 0px;
+	color: var(--system_dark_gray);
+}
+
+p#error_msg
+{
+	font: 400 13px MainFont,sans-serif;
+	line-height: var(--system_line_height);
+	color: var(--system_red);
+}
+
+div.main_container
+{
+	position: absolute;
+	top: 0px; left: 0px; height: 100vh; width: 100vw;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	
+	background-color: var(--system_white);
+}
+
+div.main_container > img
+{
+	position: absolute;
+	top: 60px; right: 90px;
+	height: 48px;
+	transition: 0.5s;
+}
+	
+div.main_container > figure
+{
+	flex: none;
+	width: 737px;
+	margin: 0px;
+	
+	background-image: url(../../visual/banner/index_banner.jpg);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: right center;
+	
+	transition: 0.3s;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: 1630px)
+{
+	div.main_container > figure
+	{
+		width: 600px;
+	}
+}
+
+@media only screen and (max-width: 1050px)
+{
+	div.main_container > img
+	{
+		right: auto;
+		left: 30px;
+	}
+	
+	div.main_container > figure
+	{
+		width: 0px;
+	}
+}
+
+div.main_container > section
+{
+	flex: 1;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--system_white);
+}
+
+/*Formlar*/
+div.options_container
+{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	
+	max-width: 965px;
+	margin-left: -10px; padding: 10px;
+	overflow: hidden;
+}
+
+form.form_unit
+{
+	flex: none;
+	
+	position: relative;
+	left: 0px;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	
+	width: 980px; min-height: 500px;
+	margin-left: -15px; margin-right: 15px;
+	transition: 0.3s;
+}
+
+form.form_unit > div.sections
+{
+	flex: 1;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+form.form_unit > div.sections + div.sections
+{
+	margin-top: 20px;
+}
+
+form.form_unit > div.sections > section
+{
+	flex: 1;
+	
+	position: relative;
+	margin: 10px;
+	max-height: 457px;
+	min-height: 457px;
+}
+
+form.form_unit > div.sections > section.gray
+{
+	padding: 20px;
+	background-color: var(--system_lighter_gray);
+}
+
+form.form_unit > div.sections.elastic > section
+{
+	max-height: none;
+	min-height: auto;
+}
+
+form.form_unit > div.sections > section > h3 + div.input_container
+{
+	margin-top: 0px;
+}
+form.form_unit > div.controls
+{
+	position: relative;
+	padding: 0px 10px 10px 0px;
+	text-align: right;
+}
+
+form.form_unit > div.controls > div.extra_options
+{
+	position: absolute;
+	left: 10px; top: 0px;
+}
+
+form.form_unit > div.controls > button
+{
+	min-width: 100px;
+}
+
+/*Radyobuton seçimli bölümler*/
+form.form_unit section.detailed_radio_list
+{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+form.form_unit section.detailed_radio_list > h3
+{
+	flex: none;
+}
+
+form.form_unit section.detailed_radio_list > div.list_container
+{
+	flex: 1;
+}
+
+form.form_unit section.detailed_radio_list > div.list_container.gray
+{
+	padding: 20px;
+	background-color: var(--system_lighter_gray);
+}
+
+form.form_unit section.detailed_radio_list div.input_container
+{
+	height: auto;
+	padding-bottom: 13px;
+	border-bottom: 1px solid var(--system_light_gray);
+}
+
+form.form_unit section.detailed_radio_list > div.list_container.gray >  div.input_container > input[type="radio"]:not(:checked) + label:before
+{
+	background-color: var(--system_white);
+}
+
+form.form_unit section.detailed_radio_list div.input_container > input[type="radio"] + label
+{
+	font: var(--system_font);
+    color: var(--system_main_color);
+    /* line-height: var(--system_line_height); */
+    background-color: transparent;
+	line-height: 20px;   
+}
+
+form.form_unit  section.detailed_radio_list div.input_container > input[type="radio"] + label > span
+{
+	color: var(--system_gray);
+}
+/*Radyobuton seçimli bölümler bitiş*/
+
+/*Tablolu bölümler*/
+form.form_unit section.table_section
+{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+form.form_unit section.table_section > h3
+{
+	flex: none;
+}
+
+form.form_unit section.table_section > div.table_container
+{
+	flex: 1;
+	border-radius: 0px; 
+	box-shadow: none;
+}
+
+form.form_unit section.table_section > div.table_container.gray
+{
+	padding: 20px;
+	background-color: var(--system_lighter_gray);
+}
+
+
+form.form_unit section.table_section > div.table_container > div.body
+{
+	padding: 0px; 
+	height: 100%; width: auto; max-height: none;
+	overflow: auto;
+}
+
+form.form_unit section.table_section > div.table_container.gray > div.body > table
+{
+	background-color: var(--system_white);
+}
+
+form.form_unit section.table_section > div.table_container.gray > div.body > table tr:hover
+{
+	background-color: transparent;
+}
+/*Tablolu bölümler bitiş*/
+
+/*Form yer tutucuları*/
+form.form_unit > div.sections > section.placeholder
+{
+	position: relative;
+}
+
+form.form_unit > div.sections > section.placeholder:after
+{
+	content: "";
+	position: absolute;
+	top: calc(50% - 0.5*var(--system_line_height) + 50px); left: var(--container_padding_vertical); right: var(--container_padding_vertical); 
+	width: calc(100% - 2*var(--container_padding_vertical)); height: var(--system_line_height);
+	
+	font: var(--system_font);
+	line-height: var(--system_line_height);
+	color: var(--system_main_color);
+	text-align: center;
+	white-space: pre-line;
+	z-index: 11;
+}
+
+form.form_unit > div.sections > section.placeholder:before
+{
+	content: "";
+	
+	position: absolute;
+	top: 0px; left: 0px; 
+	height: 100%; width: 100%;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: var(--system_lighter_gray);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: center calc(50% - 28px);
+	background-size: auto 56px;
+	z-index: 10;
+}
+
+form.form_unit > div.sections > section:has(h3).placeholder:before
+{
+	top: 35px;
+	height: calc(100% - 35px);	
+}
+
+/*Veri Bulunamadı Tanımı - Genel*/
+form.form_unit > div.sections > section.placeholder.no_data:before
+{
+	background-image: url(../../visual/icon/registration/not_found_red.png);
+}
+
+form.form_unit > div.sections > section.placeholder.no_data:after
+{
+	content: "Veri Bulunamadı";
+}
+
+/*Yükleniyor Tanımı*/
+form.form_unit > div.sections > section.loading:before
+{
+	background-image: url(../../visual/icon/loading.gif);
+	background-position: center calc(50% - 16px);
+	background-size: 32px;
+}
+
+form.form_unit > div.sections > section.loading:after
+{
+	top: calc(50% - 0.5*var(--system_line_height) + 35px);
+	content: "Yükleniyor";
+}
+
+/*Antrenman Bulunamadı Tanımı*/
+form.form_unit > div.sections > section.placeholder.training.no_data:before
+{
+	background-image: url(../../visual/icon/registration/not_found_red.png);
+}
+
+form.form_unit > div.sections > section.placeholder.training.no_data:after
+{
+	content: "Girdiğiniz sporcu ve branş bilgileri ile eşleşen bir antrenman bulunamadı. \A \A Kaydınıza bir antrenman seçimi yapmadan devam edebilirsiniz. Bu durumda, uygun antrenman bilgisi için ekibimiz sizinle temasa geçecektir.";	
+}
+
+/*Konum Bekleniyor Tanımı*/
+form.form_unit > div.sections > section.placeholder.location.no_data:before
+{
+	background-image: url(../../visual/icon/registration/location_pin_dark_gray.png);
+}
+
+form.form_unit > div.sections > section.placeholder.location.no_data:after
+{
+	content: "Konum bilgisi için bir antrenman seçimi yapın";	
+}
+
+/*Ödeme Planı Bekleniyor Tanımı*/
+form.form_unit > div.sections > section.placeholder.payment.no_data:before
+{
+	background-image: url(../../visual/icon/registration/payment_dark_gray.png);
+}
+
+form.form_unit > div.sections > section.placeholder.payment.no_data:after
+{
+	content: "Ödeme planı detayları için bir seçim yapın";	
+}
+/*Form yer tutucuları bitiş*/
+
+/*Harita Bölümü*/
+form.form_unit section#map_container
+{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+form.form_unit section#map_container > div.map_frame
+{
+	flex: 1;
+	position: relative;
+	background-color: var(--system_lighter_gray);
+}
+
+form.form_unit section#map_container > div.map_frame > div#map
+{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+form.form_unit section#map_container > div.map_frame > div#map.loading:after
+{
+	content: "";
+	
+	position: absolute;
+	top: 0px; left: 0px; right: 0px; bottom: 0px;
+	
+	display: inline-block;
+	background-image: url(../visual/icon/loading.gif);
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center;
+}
+
+form.form_unit section#map_container > div.map_frame > div#map.no_data:after
+{
+	content: "Harita Bilgisi Alınamadı";
+	
+	position: absolute;
+	top: 0px; left: 0px; right: 0px; bottom: 0px;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	font: 600 13px var(--system_font_family);
+	color: var(--system_main_color);
+}
+
+form.form_unit section#map_container > div.map_controls
+{
+	display: none;
+	flex: none;
+	text-align: left;
+	padding: 15px;
+}
+
+form.form_unit section#map_container > div.map_controls.active
+{
+	display: block;
+}
+
+form.form_unit section#map_container > div.map_controls > button
+{
+	margin: 0px;
+	margin-right: 10px;
+	
+	font: 600 13px var(--system_font_family);
+	line-height: var(--system_line_height);
+	font-style: italic;
+}
+
+form.form_unit section#map_container > div.map_controls > button:last-child
+{
+	margin-left: 20px;
+}
+
+form.form_unit section#map_container > div.map_controls > button:hover
+{
+	text-decoration: underline;
+}
+/*Harita Bölümü Bitiş*/
+
+/*Uyarı Kutucukları*/
+form.form_unit section > div.caution_container
+{
+	margin-top: 13px;
+}
+
+form.form_unit section > div.caution_container > img
+{
+	display: inline-block;
+	height: 26px;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+form.form_unit section > div.caution_container > p
+{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+	line-height: var(--system_line_height);
+}
+
+input#responsibility_acceptance_checkbox + label
+{
+	top: 0px !important;
+}

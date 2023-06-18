@@ -1,0 +1,175 @@
+.ms-options-wrap,
+.ms-options-wrap * {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.ms-options-wrap > button:focus,
+.ms-options-wrap > button {
+    position: relative;
+    width: 100%; height: 100%;
+    text-align: left;
+    background-color: var(--system_lighter_gray);
+    padding: 5px 20px 5px 5px;
+    margin-top: 1px;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--system_main_color);
+    outline: none;
+    white-space: nowrap;
+    padding: 5px 25px;
+}
+
+.ms-options-wrap > button:focus
+{
+	border: 1px solid var(--system_red);
+}
+.ms-options-wrap > button:after {
+    display: none;
+    content: ' ';
+    height: 0; width: 0;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 0;
+    border: 6px solid rgba(0, 0, 0, 0);
+    border-top-color: #999;
+    margin-top: -3px;
+}
+
+.ms-options-wrap > .ms-options {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    background: white;
+    z-index: 2000;
+    border: 1px solid #aaa;
+	text-align:left;
+	padding: 0px;
+}
+
+.ms-options-wrap > .ms-options > .ms-search input {
+    width: 100%;
+    padding: 4px 5px;
+    border: none;
+    border-bottom: 1px groove;
+    outline: none;
+}
+
+.ms-options-wrap > .ms-options .ms-selectall {
+    display: inline-block;
+    font-size: .9em;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+.ms-options-wrap > .ms-options .ms-selectall:hover {
+    text-decoration: underline;
+}
+
+.ms-options-wrap > .ms-options > .ms-selectall.global {
+    margin: 4px 5px;
+}
+
+.ms-options-wrap > .ms-options > ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;	
+	height: auto;
+}
+
+.ms-options-wrap > .ms-options > ul > li.optgroup {
+    padding: 5px;
+}
+.ms-options-wrap > .ms-options > ul > li.optgroup + li.optgroup {
+    border-top: 1px solid #aaa;
+}
+
+.ms-options-wrap > .ms-options > ul > li.optgroup .label {
+    display: block;
+    padding: 5px 0 0 0;
+    font-weight: bold;
+}
+
+.ms-options-wrap > .ms-options > ul label {
+    position: relative;
+    display: inline-block;
+    width: 99%;
+    padding: 8px 4px;
+    margin: 1px 0;
+}
+
+.ms-options-wrap > .ms-options > ul li.selected label,
+.ms-options-wrap > .ms-options > ul label:hover {
+    background-color: #efefef;
+}
+
+.ms-options-wrap > .ms-options > ul li
+{
+	box-sizing: content-box;
+	display: block;
+	background-color: var(--system_white);
+}
+.ms-options-wrap > .ms-options > ul input[type="checkbox"]
+{
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow
+{
+	background-color: var(--system_white);
+	padding: 1px 25px;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow:hover
+{
+	background-color: var(--system_lighter_gray);
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow label
+{
+	position: relative;
+	left: 1px;
+	padding: 5px 5px 5px 25px;
+	font: 300 12px Montserrat,sans-serif;
+	color: var(--system_main_color);
+	background-color: transparent;
+	line-height: var(--system_line_height);
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow label:before
+{
+	content: '';
+	
+	position: absolute;
+	top: calc(50% - 7px); left: 0px;
+	
+	display: inline-block;
+	height: 12px; width: 12px;
+	border: 1px solid var(--system_light_gray);
+	border-radius: 4px;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow label:has(input[type="checkbox"]:checked):before
+{
+	border: 1px solid var(--system_red);
+	background-color: var(--system_red);
+	background-image: url(../../visual/icon/check.png);
+	background-repeat: no-repeat;
+	background-size: 8px auto;
+	background-position: center;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow:hover label
+{
+	cursor: pointer;
+}
+
+.ms-options-wrap > .ms-options > ul li.ms-reflow label:has(input[type="checkbox"]:focus)
+{
+	text-decoration: underline;
+}

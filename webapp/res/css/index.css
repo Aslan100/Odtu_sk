@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+h1
+{
+	font: 700 21px Montserrat,sans-serif;
+	color: var(--system_black);
+	line-height: var(--system_line_height);
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+p
+{
+	font: 300 13px Montserrat,sans-serif;
+	line-height: var(--system_line_height);
+	max-width: 380px;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+p#error_msg
+{
+	font: 400 13px MainFont,sans-serif;
+	line-height: var(--system_line_height);
+	color: var(--system_red);
+}
+
+div.main_container
+{
+	position: absolute;
+	top: 0px; left: 0px; height: 100vh; width: 100vw;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	
+	background-color: var(--system_white);
+}
+
+div.main_container > img
+{
+	position: absolute;
+	top: 60px; right: 90px;
+	height: 48px;
+	transition: 0.5s;
+}
+	
+div.main_container > figure
+{
+	flex: none;
+	width: 737px;
+	margin: 0px;
+	
+	background-image: url(../visual/banner/index_banner.jpg);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: right center;
+	
+	transition: 0.3s;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: 1630px)
+{
+	div.main_container > figure
+	{
+		width: 600px;
+	}
+}
+
+@media only screen and (max-width: 1050px)
+{
+	div.main_container > img
+	{
+		right: auto;
+		left: 30px;
+	}
+	
+	div.main_container > figure
+	{
+		width: 0px;
+	}
+}
+  
+div.main_container > section
+{
+	flex: 1;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--system_white);
+}
+
+form > div.controls_container 
+{
+	margin-top: 10px;
+}
+
+form > div.controls_container > a
+{
+	font: 700 12px Montserrat,sans-serif;
+	color: var(--system_main_color);
+	margin-left: 20px;
+	
+	text-decoration: none;
+}
+
+form > div.controls_container > a:hover
+{
+	text-decoration: underline;
+}
+
+form > div.page_options_container
+{
+	margin-bottom: 25px;	
+}
+
+form > div.page_options_container > button,
+form > div.page_options_container > a
+{
+	height: auto;
+	font: 700 13px Montserrat,sans-serif;
+	line-height: var(--system_line_height);
+	padding: 5px 0px 8px 0px;
+	border-bottom: 2px solid var(--system_red);
+	margin-right: 20px;
+}
+
+form > div.page_options_container > a 
+{
+	font-weight: 700;
+	border-bottom: 2px solid var(--system_light_gray);
+	color: var(--system_light_gray);
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+form > div.page_options_container > a:hover
+{
+	font-weight: 700;
+	color: var(--system_main_color);
+	border-bottom: 2px solid var(--system_red);
+}

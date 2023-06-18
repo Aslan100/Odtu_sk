@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+div.team_card
+{
+	position: relative;
+	
+	display: block;
+	height: 100%; width: 100%;
+	background-color: var(--system_white);
+	box-shadow: 0px 0px 10px #e5e5e5;
+	
+	overflow: auto;
+}
+
+div.team_card:nth-of-type(2)
+{
+	width: 715px;
+	min-width: 715px;
+}
+div.team_card + div.team_card
+{
+	margin-left: 15px;
+}
+
+div.team_card > header
+{
+	position: relative;
+	
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 10px 25px;
+    height: 110px; width: calc(100% - 50px);
+    
+    background-color: var(--system_gray);
+    border-bottom: 1px solid var(--system_lighter_gray);
+}
+
+div.team_card > header > figure
+{
+	flex: none;
+	margin: 0px; padding: 0px;
+	border: 2px solid var(--system_white);
+	height: 72px; width: 72px;
+	background-color: var(--system_white);
+	border-radius: 50%;
+	
+	background-image: url(../visual/icon/top_panel/account.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+div.team_card > header > section
+{
+	flex: 1;
+	padding: 0px 0px 0px 25px;
+}
+
+div.team_card > header > section > h2
+{
+	margin: 0px;
+	font: 700 13px Montserrat,sans-serif;
+    color: var(--system_white);
+    line-height: var(--system_line_height);
+}
+
+div.team_card > header > section > p
+{
+	margin: 0px; margin-top: 3px;
+	font: 400 13px Montserrat,sans-serif;
+    color: var(--system_white);
+    line-height: var(--system_line_height);
+}
+
+div.team_card > header > section > div.card_control
+{
+	position: absolute; 
+	top: 5px; right: 15px;
+}
+
+div.team_card > header > section > div.card_control > button
+{
+	display: inline-block;
+	vertical-align: middle;
+	height: 13px; width: 13px;
+	transition: 0.3s;
+	margin-left: 12px; margin-top: 8px;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+div.team_card > header > section > div.card_control > button#close_card_button
+{
+	font: 700 13px Symbols, sans-serif; 
+	color: var(--system_white);
+	margin-left: 12px;
+	opacity: 1;
+}
+
+div.team_card > header > section > div.card_control > button#close_card_button:hover
+{
+	color: var(--system_red);
+}
+
+div.team_card > header > section > div.card_control > button#edit_team_button
+{
+	background-image: url(../visual/icon/edit_white.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+div.team_card > header > section > div.card_control > button#edit_team_button:hover
+{
+	background-image: url(../visual/icon/edit.png);
+}
+div.team_card > header > section > div.card_control > button#delete_team_button
+{
+	background-image: url(../visual/icon/trash_white.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+div.team_card > header > section > div.card_control > button#delete_team_button:hover
+{
+	background-image: url(../visual/icon/trash.png);
+}
+
+div.team_card > div.data
+{
+	position: relative;
+	left: 0px;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	
+	transition: 0.3s;
+}
+
+div.team_card > div.data > table
+{
+	flex: none;
+	width: calc(100% - 30px);
+	margin: 15px;
+	border-spacing:0;
+	border-collapse: collapse;
+}
+
+div.team_card > div.data > table > thead th
+{
+	background-color: var(--system_light_gray);
+	font: 700 11px Montserrat,sans-serif;
+    color: var(--system_gray);
+    line-height: var(--system_line_height);
+    border: 1px solid var(--system_light_gray);
+    text-align: left;
+    padding: 10px;
+}
+
+div.team_card > div.data > table > tbody > tr
+{
+	cursor: pointer;
+}
+div.team_card > div.data > table > tbody > tr:hover
+{
+	background-color: var(--system_lighter_gray);
+}
+
+div.team_card > div.data > table > tbody > tr.selected
+{
+	background-color: var(--system_lighter_gray);
+}
+
+div.team_card > div.data > table > tbody > tr.selected *
+{
+	font-weight:  600;
+}
+
+div.team_card > div.data > table td
+{
+	padding: 10px;
+	padding: 10px;
+	border: 1px solid var(--system_light_gray);
+	
+	font: 400 13px Montserrat,sans-serif;
+    color: var(--system_gray);
+    line-height: var(--system_line_height);
+    
+    text-align: left;
+}
+
+div.team_card > div.player_controls
+{
+	position: absolute;
+	display: none; 
+	bottom: 0px; left: 0px; right: 0px;
+	padding: 10px 15px;
+	background-color: var(--system_lighter_gray); 	
+}
+
+div.team_card > div.player_controls > button
+{
+	margin: 0px;
+	background-color: var(--system_main_color);
+}
+div.team_card > div.player_controls.displayed
+{
+	display: block;
+}

@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+div.table_container
+{
+	flex: none;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	
+	font-size: 15px;
+	padding: calc(var(--system_line_height) + 28px + 15px) 7px 15px 7px;
+}
+
+div.table_container > header
+{
+	position: absolute;
+	top: 0px; left: 0px; right: 0px;
+}
+
+div.table_container > div
+{
+	flex: 1;
+	padding: 0px 15px !important;
+	min-height: 400px;
+	border-left: 1px solid var(--system_light_gray);
+}
+
+div.table_container > div:first-of-type
+{
+	padding-left: 0px;
+	border-left: 0;
+}
+
+div.table_container > div:last-child
+{
+	padding-right: 0px;
+	
+}
+div.table_container > div > header
+{
+	padding: 12px 10px;
+    font: 700 11px Montserrat,sans-serif;
+    color: var(--system_gray);
+    line-height: var(--system_line_height);
+    text-align: left;
+    border-right: 1px solid var(--system_light_gray);
+    background-color: var(--system_light_gray);
+}
+
+div.table_container > div#map_container
+{
+	flex: none;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	width: 400px;
+	
+	overflow: hidden;
+}
+
+div.table_container > div#map_container > header
+{
+	flex: none;
+}
+
+div.table_container > div#map_container > div.map_frame
+{
+	flex: none;
+	background-color: var(--system_lighter_gray);
+	margin: 15px;
+}
+
+div.table_container > div#map_container > div.map_controls
+{
+	display: none;
+	flex: none;
+	text-align: left;
+	padding: 0px 15px;
+}
+
+div.table_container > div#map_container > div.map_controls.active
+{
+	display: block;
+}
+
+div.table_container > div#map_container > div.map_controls > button
+{
+	margin: 0px;
+	margin-right: 10px;
+	
+	font: 600 12px var(--system_font_family);
+	line-height: var(--system_line_height);
+}
+
+div.table_container > div#map_container > div.map_controls > button:last-child
+{
+	margin-left: 20px;
+}
+
+div.table_container > div#map_container > div.map_controls > button:hover
+{
+	text-decoration: underline;
+}
+
+div.table_container > div#map_container > div.map_frame > div#map
+{
+	position: relative;
+	height: 370px;
+	width: 370px;
+}
+
+div.table_container > div#map_container > div.map_frame > div#map.loading:after
+{
+	content: "";
+	
+	position: absolute;
+	top: 0px; left: 0px; right: 0px; bottom: 0px;
+	
+	display: inline-block;
+	background-color: var(--system_light_gray);
+	background-image: url(../visual/icon/loading.gif);
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-position: center;
+}
+
+div.table_container > div#map_container > div.map_frame > div#map.no_data:after
+{
+	content: "Harita Bilgisi Alınamadı";
+	
+	position: absolute;
+	top: 0px; left: 0px; right: 0px; bottom: 0px;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--system_light_gray);
+	font: 600 13px var(--system_font_family);
+	color: var(--system_main_color);
+}
+
+/*Tablo Elemanları*/
+table tbody tr  td
+{
+	position: relative;
+}
+
+table tbody tr td span.colour_bullet
+{
+	display: inline-block;
+	height: 8px; width: 8px;
+	margin-right: 2px; margin-bottom: 1px;
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: var(--system_main_color);
+}
+
+table tbody tr td p
+{
+	line-height: 1.2em;
+	margin: 0px; margin-top: 3px;
+	color: var(--system_gray);
+}
+
+table tbody tr td div
+{
+	display: none;
+	position: absolute;
+	top: calc(50% - 6px); right: 0px;
+	height: 12px;
+}
+
+table tbody tr td div.active
+{
+	display: inline-block;
+}
+
+table tbody tr td div > button
+{
+	display: inline-block;
+	height: 100%; width: 15px;
+	vertical-align: middle;
+	margin-right: 10px !important;
+	filter: grayscale(100%) contrast(80%);
+	opacity: 0.8;
+}
+
+table tbody tr td div > button#delete_location_button
+{
+	background-image: url(../visual/icon/trash.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+table tbody tr td div > button#edit_location_button
+{
+    background-image: url(../visual/icon/edit.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/*İstattistikler*/
+div.stats_container > div
+{
+	padding: 15px;
+}
+div.stats_container > div > div.row
+{
+	margin: 20px 0px;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+div.stats_container > div > div.row > span
+{
+	flex: none;
+	
+	display: inline-block;
+	font: 400 13px var(--system_font_family);
+	color: var(--system_main_color);
+	margin-right: 10px;
+}
+
+div.stats_container > div > div.row > span:first-child
+{
+	min-width: 80px;
+	font-weight: 600;	
+}
+
+div.stats_container > div > div.row > div.data_bar
+{
+	flex: 1;
+	position: relative;
+	
+	height: 10px;
+	background-color: var(--system_light_gray);
+	margin-right: 10px;
+	
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+div.stats_container > div > div.row > div.data_bar > div.indicator
+{
+	position: absolute;
+	top: 0px; left: 0px; bottom: 0px;
+	width: 0%;
+	transition: 1s;
+	border-radius: 5px;
+	background-color: var(--system_red);
+}
+
+div.stats_container > div > div.row > div.data_bar > div.indicator.low
+{
+	background-color: #73d216;
+}
+
+div.stats_container > div > div.row > div.data_bar > div.indicator.moderate
+{
+	background-color: #f57900;
+}

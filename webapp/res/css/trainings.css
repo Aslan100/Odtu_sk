@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+div.table_container
+{
+	overflow: visible;
+}
+
+div.calendar_controls
+{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 30px 15px 15px 15px;
+}
+
+div.calendar_controls > *
+{
+	flex: none;
+	display: inline-block;
+	margin: 0px 20px 0px 0px;
+	vertical-align: middle;
+}
+
+div.calendar_controls > p
+{
+	flex: 2;
+	font: 600 calc(1.6*var(--system_font_size)) var(--system_font_family);
+	line-height: var(--system_line_height);
+	color: var(--system_main_color);
+}
+
+div.calendar_controls > a.calendar_nav
+{
+	height: 40px; width: 40px;
+	border-radius: 20px;
+	border: 1px solid var(--system_light_gray);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 6px;
+}
+
+div.calendar_controls > a.calendar_nav:hover
+{
+	background-color: var(--system_lighter_gray);
+}
+
+div.calendar_controls > a.calendar_nav.prev_week
+{
+	background-image: url(../visual/icon/prev.png);
+	margin-right: 5px;
+}
+
+div.calendar_controls > a.calendar_nav.next_week
+{
+	background-image: url(../visual/icon/next.png);
+}
+
+div.calendar_controls > div
+{
+	flex: 1;
+	
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: flex-end;
+	font-size: calc(0.9*var(--system_font_size));
+	max-height: calc(2*var(--system_line_height) + 2*12px);
+	margin-right: 0px;
+}
+
+div.calendar_controls > div > a > span.colour_bullet
+{
+	display: inline-block;
+	height: 8px; width: 8px;
+	margin-right: 8px;
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: var(--system_main_color);
+}
+
+div.calendar_controls > div > a
+{
+	flex: none;
+	min-width: 170px; max-width: 170px;
+	margin: 5px 0px  5px 15px;
+	font: var(--system_font);
+	font-size: inherit;
+	line-height: var(--system_line_height);
+	color: var(--system_main_color);
+	white-space: nowrap;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+div.calendar_controls > div > a:hover
+{
+	text-decoration: underline;
+}
+
+table#calendar_table > thead > tr > th
+{
+	padding-left: 0px; padding-right: 0px;
+}
+
+table#calendar_table > thead > tr > th > span
+{
+	position: relative;
+	
+	display: inline-block;
+	left: -18px;
+	width: 36px;
+	font: inherit;
+	color: inherit;
+	line-height: 0px;
+	text-align: center;
+}
+
+table#calendar_table > tbody > tr:hover
+{
+	cursor: default;
+	background-color: transparent;
+}
+
+table#calendar_table > tbody > tr > td
+{
+	height: auto;
+	min-width: 8px;
+	padding: 0px;
+	border: none;
+	line-height: 0px;
+}
+
+table#calendar_table > tbody > tr > td.day_cell
+{
+	padding: 10px 20px 10px 20px;
+	height: 96px; max-width: 0px;
+	font: var(--system_font);
+	font-weight: 600;
+	color: var(--system_light_gray);
+	border-left: 1px solid var(--system_light_gray);
+	background-color: var(--system_dark_gray);
+	border-top: 1px solid var(--system_dark_gray);
+	vertical-align: middle;
+	text-align: center;
+}
+
+table#calendar_table > tbody > tr > td.day_cell.today
+{
+	background-color: var(--system_red);
+}
+
+table#calendar_table > tbody > tr > td.day_cell > span
+{
+	display: inline-block;
+	width: 18px; height: 18px;
+	padding: 4px;
+	margin-bottom: 5px;
+	background-color: var(--system_gray);
+	font: inherit;
+	line-height: 18px;
+	color: var(--system_light_gray);
+	border-radius: 13px;
+	
+	text-align: center;
+	
+}
+
+table#calendar_table > tbody > tr > td.day_cell.today > span
+{
+	background-color: var(--system_red);
+	color: var(--system_white);
+	width: auto; height: auto;
+	font-size: 2em;
+}
+
+table#calendar_table > tbody > tr.new_day
+{
+	border-top: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr:last-child
+{
+	border-bottom: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr:not(.new_day) > td.time_cell:nth-child(4n-3)
+{
+	border-left: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr:not(.new_day) > td.time_cell:nth-child(8n-3)
+{
+	border-left: none;
+}
+
+table#calendar_table > tbody > tr.new_day > td.time_cell:nth-child(4n-2)
+{
+	border-left: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr.new_day > td.time_cell:nth-child(8n-2)
+{
+	border-left: none;
+}
+
+table#calendar_table > tbody > tr > td.time_cell:last-child
+{
+	border-right: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled > span
+{
+	position: relative;
+	display: block;
+	height: 22px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled span > span
+{
+	position: absolute;
+	top: calc(11px - 0.6em); left: 12px;
+	font-size:  0.9em;
+	line-height: 1.2em;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	z-index: 10;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.beginning > span
+{
+	position: relative;
+	
+	/*width: 22px; max-width: 22px;*/
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	overflow: visible;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.past_day
+{
+	background-color: var(--system_lighter_gray);
+}
+
+table#calendar_table > tbody > tr > td.time_cell.beginning > span > span.colour_indicator
+{
+	position: absolute;
+	top: 0px; left: 0px; bottom: 0px;
+	width: 5px;
+	margin: 0px;
+	background-color: blue;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.end > span
+{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	overflow: hidden;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled
+{
+	height: auto;
+	padding: 0px 0px 8px 0px;
+}
+
+table#calendar_table > tbody > tr.new_day > td.time_cell.scheduled
+{
+	padding-top: 8px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled > span
+{	
+	background-color: var(--system_light_gray);
+	border-left: 1px solid var(--system_light_gray);
+	cursor: pointer;
+}
+
+/*Bilgi Kartı*/
+table#calendar_table > tbody > tr > td.time_cell.scheduled.beginning > div.data_card
+{
+	position: relative;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled.beginning > div.data_card > div.athlete_card
+{
+	position: absolute;
+	top: 5px; left: 0px;
+	
+	min-width: 375px;
+	min-height: 475px;
+	box-shadow: 0px 0px 10px -3px var(--system_gray);
+	z-index: 20;
+}

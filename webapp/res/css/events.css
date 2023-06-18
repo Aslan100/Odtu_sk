@@ -1,0 +1,988 @@
+@charset "UTF-8";
+
+div.calendar_controls
+{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 30px 15px 15px 15px;
+}
+
+div.calendar_controls > *
+{
+	flex: none;
+	display: inline-block;
+	margin: 0px 20px 0px 0px;
+	vertical-align: middle;
+}
+
+div.calendar_controls > p
+{
+	flex: 2;
+	font: 600 calc(1.6*var(--system_font_size)) var(--system_font_family);
+	line-height: var(--system_line_height);
+	color: var(--system_main_color);
+}
+
+div.calendar_controls > a.calendar_nav
+{
+	height: 40px; width: 40px;
+	border-radius: 20px;
+	border: 1px solid var(--system_light_gray);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 6px;
+}
+
+div.calendar_controls > a.calendar_nav:hover
+{
+	background-color: var(--system_lighter_gray);
+}
+
+div.calendar_controls > a.calendar_nav.prev_week
+{
+	background-image: url(../visual/icon/prev.png);
+	margin-right: 5px;
+}
+
+div.calendar_controls > a.calendar_nav.next_week
+{
+	background-image: url(../visual/icon/next.png);
+}
+
+div.calendar_controls > div
+{
+	flex: 1;
+	
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: flex-end;
+	font-size: calc(0.9*var(--system_font_size));
+	max-height: calc(2*var(--system_line_height) + 2*12px);
+	margin-right: 0px;
+}
+
+div.calendar_controls > div > a > span.colour_bullet
+{
+	display: inline-block;
+	height: 8px; width: 8px;
+	margin-right: 8px;
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: var(--system_main_color);
+}
+
+div.calendar_controls > div > a
+{
+	flex: none;
+	min-width: 170px; max-width: 170px;
+	margin: 5px 0px  5px 15px;
+	font: var(--system_font);
+	font-size: inherit;
+	line-height: var(--system_line_height);
+	color: var(--system_main_color);
+	white-space: nowrap;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+div.calendar_controls > div > a:hover
+{
+	text-decoration: underline;
+}
+
+table#calendar_table > thead > tr > th
+{
+	padding-left: 0px; 
+	padding-right: 0px;
+	background-color: transparent;
+	border: none;
+}
+
+table#calendar_table > thead > tr > th > span
+{
+	display: inline-block;
+	font: inherit;
+	color: inherit;
+	text-align: center;
+}
+
+table#calendar_table > tbody > tr:hover
+{
+	cursor: default;
+	background-color: transparent;
+}
+
+table#calendar_table > tbody > tr > td
+{
+	height: 22px;
+	min-width: 8px;
+	padding: 0px;
+	border: none;
+	border-left: 1px solid var(--system_light_gray);
+	border-right: 1px solid var(--system_light_gray);
+	line-height: 0px;
+}
+
+table#calendar_table > tbody > tr > td.day_cell
+{
+	padding: 10px 30px 10px 10px;
+	max-width: 0px;
+	font: var(--system_font);
+	font-weight: 600;
+	line-height: calc(1.5*var(--system_line_height));
+}
+
+table#calendar_table > tbody > tr > td.day_cell > span
+{
+	display: inline-block;
+	width: 18px; height: 18px;
+	padding: 4px;
+	font: inherit;
+	line-height: 18px;
+}
+
+table#calendar_table > tbody > tr > td.day_cell > span:first-child
+{
+	border-radius: 13px;
+	background-color: var(--system_lighter_gray);
+	text-align: center;
+}
+
+table#calendar_table > tbody > tr > td.day_cell.today > span
+{
+	background-color: var(--system_red);
+	color: var(--system_white);
+}
+
+table#calendar_table > tbody > tr.new_day
+{
+	border-top: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr:last-child
+{
+	border-bottom: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr:not(.new_day) > td.time_cell
+{
+	border-left: 1px solid var(--system_light_gray);
+}
+
+table#calendar_table > tbody > tr.new_day > td.time_cell:nth-child(4n)
+{
+	border-left: none;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled > span
+{
+	position: relative;
+	display: block;
+	height: 22px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled span > span
+{
+	position: absolute;
+	top: calc(11px - 0.6em); left: 12px;
+	font-size:  0.9em;
+	line-height: 1.2em;
+	white-space: nowrap;
+	z-index: 10;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.beginning > span
+{
+	position: relative;
+	
+	/*width: 22px; max-width: 22px;*/
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	overflow: visible;
+}
+
+table#calendar_table > tbody > tr > td.day_cell.past_day,
+table#calendar_table > tbody > tr > td.time_cell.past_day
+{
+	background-color: var(--system_lighter_gray);
+}
+
+table#calendar_table > tbody > tr > td.day_cell.past_day > span,
+table#calendar_table > tbody > tr > td.time_cell.past_day > span,
+table#calendar_table > tbody > tr > td.day_cell.months_past_day > span,
+table#calendar_table > tbody > tr > td.time_cell.months_past_day > span,
+table#calendar_table > tbody > tr > td.day_cell.future_day > span,
+table#calendar_table > tbody > tr > td.time_cell.future_day > span
+{
+	opacity: 0.5;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.beginning > span > span.colour_indicator
+{
+	position: absolute;
+	top: 0px; left: 0px; bottom: 0px;
+	width: 5px;
+	margin: 0px;
+	background-color: blue;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.end > span
+{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	overflow: hidden;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled
+{
+	height: auto;
+	padding: 0px 0px 8px 0px;
+}
+
+table#calendar_table > tbody > tr.new_day > td.time_cell.scheduled
+{
+	padding-top: 8px;
+}
+
+table#calendar_table > tbody > tr > td.time_cell.scheduled > span
+{	
+	background-color: var(--system_light_gray);
+	border-left: 1px solid var(--system_light_gray);
+	cursor: pointer;
+}
+
+/*Bilgi Kartı*/
+div.data_card
+{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	
+	height: 65%; min-width: 450px; max-width: 1350px;
+	background-color: var(--system_white);
+	box-shadow: 0px 0px 30px -5px var(--system_main_color);
+}
+
+div.squad_card
+{
+	flex: 2;
+	
+	position: relative;
+	width: 900px;
+	background-color: var(--system_gray);
+	box-shadow: 0px 0px 30px -5px var(--system_main_color);
+	
+	overflow: auto;
+}
+
+div.event_card
+{
+	flex: 1;
+	
+	position: relative;
+	display: block;
+	min-width: 450px; max-width: 450px;
+	background-color: var(--system_white);
+	overflow: hidden;
+}
+
+div.event_card > header
+{
+	position: relative;
+	
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 10px 25px;
+    height: 20%; width: calc(100% - 50px);
+    min-height: 125px;
+    
+    background-color: var(--system_gray);
+}
+
+div.event_card > header > section  > h2 + button
+{
+	margin-top: 20px;
+}
+
+div.event_card > header > figure
+{
+	flex: none;
+	margin: 0px; padding: 0px;
+	border: 2px solid var(--system_white);
+	height: 72px; width: 72px;
+	background-color: var(--system_white);
+	border-radius: 50%;
+	
+	background-image: url(../visual/icon/top_panel/account.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+div.event_card > header > section
+{
+	flex: 1;
+	padding: 0px 0px 0px 0px;
+}
+
+div.event_card > header > figure + section
+{
+	margin-left: 20px;
+}
+
+div.event_card > header > section > h2
+{
+	margin: 0px;
+	font: 700 13px Montserrat,sans-serif;
+    color: var(--system_white);
+    line-height: var(--system_line_height);
+}
+
+div.event_card > header > section > p
+{
+	margin: 0px; margin-top: 3px;
+	font: 400 13px Montserrat,sans-serif;
+    color: var(--system_white);
+    line-height: var(--system_line_height);
+}
+
+div.event_card > header > section > div.card_control
+{
+	position: absolute; 
+	top: 5px; right: 15px;
+}
+
+div.event_card > header > section > div.card_control > button
+{
+	display: inline-block;
+	vertical-align: middle;
+	height: 13px; width: 13px;
+	margin-left: 12px; margin-top: 8px;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+div.event_card > header > section > div.card_control > button#close_card_button
+{
+	font: 700 13px Symbols, sans-serif; 
+	color: var(--system_white);
+	margin-left: 12px;
+	opacity: 1;
+}
+
+div.event_card > header > section > div.card_control > button#close_card_button:hover
+{
+	color: var(--system_red);
+}
+
+div.event_card > header > section > div.card_control > button#edit_item_button
+{
+	background-image: url(../visual/icon/edit_white.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+div.event_card > header > section > div.card_control > button#edit_item_button:hover
+{
+	background-image: url(../visual/icon/edit.png);
+}
+div.event_card > header > section > div.card_control > button#delete_item_button
+{
+	background-image: url(../visual/icon/trash_white.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+div.event_card > header > section > div.card_control > button#delete_item_button:hover
+{
+	background-image: url(../visual/icon/trash.png);
+}
+
+div.squad_card > div.data,
+div.event_card > div.data
+{
+	position: relative;
+	left: 0px; height: 80%;
+	
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	
+	transition: 0.3s;
+}
+
+div.squad_card > div.data
+{
+	height: calc(100% - 76px);
+	width: 100%;
+	
+	padding-top: 76px;
+	overflow: hidden;
+	background-color: var(--system_light_gray);
+}
+
+div.squad_card > div.data div.inline_input_row
+{
+	position: absolute;
+	top: 30px; left: 30px;	
+}
+
+div.squad_card > div.data div.input_container
+{
+	min-width: 150px;
+}
+
+div.squad_card > div.data > div.placeholder,
+div.event_card > div.data > div.placeholder
+{
+	flex: none;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	
+	width: 100%;
+	align-self: stretch;
+	overflow: hidden;
+}
+
+div.squad_card > div.data > div.loading,
+div.event_card > div.data > div.loading
+{
+	flex: none;
+	
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	
+	width: 100%;
+	align-self: stretch;
+	
+	background-image: url(../visual/icon/loading.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 44px;
+	overflow: hidden;
+}
+
+div.squad_card > div.data > div.placeholder > img,
+div.event_card > div.data > div.placeholder > img
+{
+	display: inline-block;
+	height: 220px; width: auto;
+	margin-bottom: 20px;
+}
+
+div.event_card > div.data > table,
+div.event_card > div.data > div.table_wrapper,
+div.event_card > div.data > div.pager
+{
+	flex: none;
+	width: calc(100% - 30px);
+	margin: 15px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+div.event_card > div.data > div.table_wrapper
+{
+	height: calc(100% - 30px);
+	padding: 0px 8px;
+	margin: 15px 7px;
+	overflow: auto;
+}
+
+div.event_card > div.data > div.table_wrapper > table
+{
+	width: 100%;
+}
+
+div.event_card > div.data > div.pager
+{
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	overflow: hidden;
+}
+
+div.event_card > div.data > div.pager > div.controls
+{
+	position: absolute;
+	top: calc(10px + 4px); right: 5px;
+	z-index: 10;
+}
+
+div.event_card > div.data > div.pager > div.controls > button
+{
+	display: inline-block;
+	vertical-align: middle;
+	height: 10px; width: 10px;
+	margin: 0px 3px;
+	
+	background-image: none;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+div.event_card > div.data > div.pager > div.controls > button:first-child
+{
+	background-image: url(../visual/icon/prev.png);
+}
+
+div.event_card > div.data > div.pager > div.controls > button:last-child
+{
+	background-image: url(../visual/icon/next.png);
+}
+
+div.event_card > div.data > div.pager > table
+{
+	flex: none;
+	
+	position: relative;
+	left: 0px;
+	width: 100%;
+	
+	border-spacing:0;
+	border-collapse: collapse;
+	transition: 0.3s;
+}
+
+div.squad_card > div.data > table
+{
+	margin: 30px;
+	padding: 30px;
+	background-color: var(--system_white);
+	border-radius: var(--container_border_radius);
+	width: 100%;
+}
+
+div.event_card > div.data > table > tbody tr:hover,
+div.event_card > div.data > div > table > tbody tr:hover,
+div.squad_card > div.data > table > tbody tr:hover,
+div.squad_card > div.data > div > table > tbody tr:hover
+{
+	background-color: transparent !important;
+	cursor: default !important;
+}
+
+div.squad_card > div.data > table > thead tr
+{
+	background-color: var(--system_light_gray);
+}
+
+div.event_card > div.data > table > tbody td,
+div.event_card > div.data > div > table > tbody td,
+div.squad_card > div.data > table > tbody td,
+div.squad_card > div.data > div > table > tbody td,
+div.squad_card > div.data > table > thead th,
+div.squad_card > div.data > div > table > thead th
+{
+	padding: 10px;
+	border: none;
+	border-bottom: 1px solid var(--system_light_gray);
+	
+	font: 400 13px Montserrat,sans-serif;
+    color: var(--system_gray);
+    line-height: var(--system_line_height);
+    
+    text-align: right;
+}
+
+div.squad_card > div.data > table > thead th,
+div.squad_card > div.data > div > table > thead th,
+div.squad_card > div.data > table > tbody td,
+div.squad_card > div.data > div > table > tbody td
+{
+	color: var(--system_gray);
+	text-align: left;
+}
+
+div.squad_card > div.data > table > thead th,
+div.squad_card > div.data > div > table > thead th
+{
+	font-weight: 600;
+}
+
+div.event_card > div.data > table > tbody tr:last-child > td,
+div.event_card > div.data > div > table > tbody tr:last-child > td,
+div.squad_card > div.data > table > tbody tr:last-child > td,
+div.squad_card > div.data > div > table > tbody tr:last-child > td
+{
+	border-bottom: none !important;
+}
+
+div.squad_card > div.data > table > tbody tr > td > button > img
+{
+	height: 16px;
+	opacity: 0.5;
+}
+
+div.event_card > div.data > table > tbody td.label,
+div.event_card > div.data > div > table > tbody td.label,
+div.squad_card > div.data > table > tbody td.label,
+div.squad_card > div.data > div > table > tbody td.label
+{
+	font-weight: 600;
+    color: var(--system_main_color);
+    
+    padding-left: 10px !important; padding-right: 0px !important;
+    text-align: left !important;
+}
+
+div.event_card > div.data > table > tbody td.page_title,
+div.event_card > div.data > div > table > tbody td.page_title,
+div.squad_card > div.data > table > tbody td.page_title,
+div.squad_card > div.data > div > table > tbody td.page_title
+{
+	font-weight: 600;
+    color: var(--system_red);
+    
+    padding-left: 10px !important; padding-bottom: 5px !important;
+    text-align: left !important;
+    border-bottom: none !important;
+}
+
+div.event_card > div.data table td button[mode='delete'],
+div.event_card > div.data table td button[mode='edit']
+{
+	position: relative;
+	height: 12px;
+	padding-top: 1px;
+	padding-left: 15px;
+	margin-left: 10px;
+	color: var(--system_main_color);
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 12px;
+	opacity: 0.6;
+	
+}
+
+div.event_card > div.data table td button[mode='delete']:before
+{
+	content: "";
+	
+	position: absolute;
+	top: 0px; left: 0px; bottom: 0px;
+	width: 12px;
+	
+	background-image: url(../visual/icon/trash_black.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
+div.event_card > div.data table td button[mode='edit']:before
+{
+	content: "";
+	
+	position: absolute;
+	top: 0px; left: 0px; bottom: 0px;
+	width: 12px;
+	
+	background-image: url(../visual/icon/edit_black.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: contain;
+}
+
+div.event_card > div.data > table.new_items_table,
+div.event_card > div.data > div > table.new_items_table
+{
+	height: 225px;
+}
+
+div.event_card > div.data > table.new_items_table > tbody tr:first-of-type > td,
+div.event_card > div.data > div > table.new_items_table > tbody tr:first-of-type > td
+{
+	border-bottom: none;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 130px;
+	padding-bottom: 5px;
+}
+
+div.event_card > div.data > table.new_items_table > tbody td > img,
+div.event_card > div.data > div > table.new_items_table > tbody td > img
+{
+	display: inline-block;
+	height: 24px;
+	vertical-align: middle;
+}
+
+div.event_card > div.data > table.new_items_table > tbody td > p,
+div.event_card > div.data > div > table.new_items_table > tbody td > p
+{
+	display: inline-block;
+	font: 600 15px var(--system_font_family);
+	color: var(--system_main_color);
+	margin: 0px; margin-left: 10px;
+	vertical-align: middle;
+}
+
+div.event_card > div.nav
+{
+	position: absolute;
+	left: 0px; bottom: 20px; right: 0px;
+	height: 10px;
+	
+	text-align: center;
+}
+
+div.event_card > div.nav > button
+{
+	display: inline-block;
+	height: 9px; width: 9px;
+	background-color: var(--system_light_gray);
+	opacity: 0.5;
+	transition: 0.3s;
+	border-radius: 50%;
+	margin: 0px 5px;
+}
+
+div.event_card > div.nav > button.selected,
+div.event_card > div.nav > button:hover
+{
+	opacity: 1;
+	background-color: var(--system_gray);
+}
+
+
+/*Form*/
+form header
+{
+	position: relative;
+	
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 20px 25px 20px 25px;
+    height: 110px; width: calc(100% - 50px);
+    
+    background-color: var(--system_white);
+    border-bottom: 1px solid var(--system_lighter_gray);
+}
+
+form header > figure
+{
+	flex: none;
+	margin: 0px; padding: 0px;
+	border: 2px solid var(--system_white);
+	height: 96px; width: 96px;
+	background-color: var(--system_white);
+	border-radius: 50%;
+	
+	background-image: url(../visual/icon/top_panel/account.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+form header > section
+{
+	flex: 1;
+	padding: 0px 0px 0px 25px;
+}
+
+form header > section > h2
+{
+	margin: 0px;
+	font: 700 13px Montserrat,sans-serif;
+    color: var(--system_main_color);
+    line-height: var(--system_line_height);
+}
+
+form header > section > p
+{
+	margin: 0px; margin-top: 3px;
+	font: 400 13px Montserrat,sans-serif;
+    color: var(--system_main_color);
+    line-height: var(--system_line_height);
+}
+
+form header > section > div
+{
+	margin-bottom: 5px;
+}
+
+form header div.input_container.select_container
+{
+	display: inline-block;
+	height: 30px; min-width: 0px;
+	padding: 0px 3px; margin: 0px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+form header div.input_container.select_container > select
+{
+	width: auto;
+	background: 0;
+	border: 0; 
+	padding: 0; margin: 0;
+}
+
+form header div.input_container.select_container > select:focus
+{
+	border: 0;
+}
+
+form header input[type=text]
+{
+	box-sizing: content-box;
+	
+	display: inline-block;
+	height: 30px;
+	background: 0;
+	border: 0; 
+	padding: 0px 3px;
+	border-radius: 0;
+	
+	color: var(--system_main_color);
+	border-bottom: 1px solid #c5c5c5;
+}
+
+form header div.input_container.colour_container
+{
+	display: inline-block;
+	height: 12px; width: 12px;
+	min-width: auto;
+	padding: 0px; margin: 0px;
+	margin-left: 8px;
+	margin-bottom: 2px;
+	border: none;
+	border-radius: 6px;
+	vertical-align: middle;
+	overflow: hidden;	
+}
+
+form header div.input_container.colour_container input[type=color]
+{
+	display: inline-block;
+	position: relative;
+	top: -10px; left: -10px;
+	height: calc(100% + 20px); width: calc(100% + 20px);
+	cursor: pointer;
+}
+
+form header label
+{
+	display: inline-block;
+	
+	min-width: 50px;
+	color: var(--system_main_color);
+	height: 30px; line-height: 30px !important;
+	padding: 0px 3px;
+	border-bottom: 1px solid #c5c5c5;
+}
+
+form header div:has(.colour_container) label
+{
+	border-bottom: none;
+	line-height: var(--system_line_height) !important;
+	margin-top: 5px;
+}
+
+form > section
+{
+	padding: 15px;
+}
+
+form > section > h3
+{
+	font-weight: 600 !important;
+	font-size: 13px !important;
+}
+
+/*Geniş Form*/
+form.wide_mode
+{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+}
+
+form.wide_mode.paged_mode
+{
+	width: 1070px;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+
+form.wide_mode > header
+{
+	height: auto;
+	width: 200px;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	border-bottom: none;
+}
+
+form.wide_mode.paged_mode > header
+{
+	position: relative;
+	z-index: 1;
+}
+
+form.wide_mode > header *
+{
+	flex: none;
+	text-align: center;
+}
+
+form.wide_mode.paged_mode > header > div.pager
+{
+	margin-top: 30px;
+}
+
+form.wide_mode.paged_mode > header > div.pager > button
+{
+	display: inline-block;
+	height: 10px; width: 10px;
+	margin: 0px 4px;
+	border-radius: 50%;
+	background-color: var(--system_light_gray);
+	transition: 0.3s;
+}
+
+form.wide_mode.paged_mode > header > div.pager > button.selected,
+form.wide_mode.paged_mode > header > div.pager > button:hover
+{
+	background-color: var(--system_gray);	
+}
+
+form.wide_mode > header > section
+{
+	padding: 0px;
+	margin-top: 15px;
+}
+
+form.wide_mode > *
+{
+	flex: 1;
+}
+
+form.wide_mode.paged_mode > section
+{
+	position: relative;
+	left: 0px;
+	transition: 0.5s;
+}

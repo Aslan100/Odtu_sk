@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@font-face 
+{
+	font-family: "Symbols";
+	src: url("../assets/EmojiSymbols-Regular.woff") format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-Light.woff2") format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face 
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-LightItalic.woff2") format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face 
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-Regular.woff2") format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face 
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-Italic.woff2") format('woff2');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face 
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-Bold.woff2") format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face 
+{
+	font-family: "MainFont";
+	src: url("../assets/LatoLatin-BoldItalic.woff2") format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}

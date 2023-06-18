@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+div.main_container > section > article div.input_container
+{
+	position: relative; 
+	left: -25px;
+	height: auto; 
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+
+div.main_container > section > article div.input_container > p,
+div.main_container > section > article div.input_container > button
+{
+	margin-top: 15px;
+	margin-left: 25px;
+}
+
+div.main_container > section > article div.input_container > label
+{
+	font-weight: 600;
+	font-size: 14px;
+}
+
+div.main_container > section > article div.input_container > label:after
+{
+	content: "";
+	position: absolute;
+	left: 25px; bottom: 0px; right: 0px;
+	height: 2px;
+	background-color: var(--system_light_gray);
+	border-radius: 2px;
+}
+
+div.main_container > section > article div.input_container > input[type=radio]:checked + label:after
+{
+	background-color: var(--system_red);
+}
