@@ -541,12 +541,11 @@ public class Params
 	public static final String PORTAL_PROC_RESULT_URI = "/account/proc_result.jsp";
 	
 	//e-posta parametreleri
-	public static final String EMAILER_ACCOUNT = "akademi@tuvaustria.org";
-	public static final String EMAILER_ACCOUNT_PWD = "3v5ZUxEtkwT!";
+	public static final String EMAILER_ACCOUNT = "test@test.com";
+	public static final String EMAILER_ACCOUNT_PWD = "pwd";
 	public static final String EMAILER_ACCOUNT_SMTP_SERVER_URL = "mx-out04.natrohost.com";
 	public static final int EMAILER_ACCOUNT_SSL_PORT = 465;
-	public static final String[] CONTACT_FORM_RECIPIENTS = new String[] {"ipek.keskin@tuv.at", "sinem.kayar@tuv.at", "tuba.alkan@tuv.at"};
-	//public static final String[] CONTACT_FORM_RECIPIENTS = new String[] {"oguz.aykun@gmail.com"};
+	public static final String[] CONTACT_FORM_RECIPIENTS = new String[] {"kagan.gedikli@msd.com"};
 	
 	public static final String NAME_REGEX = "^([A-Za-zÇĞİÖŞÜçğıöşü][A-Za-zÇĞİÖŞÜçğıöşü]*[.]+?\\s)*(([A-Za-zÇĞİÖŞÜçğıöşü]){2,}\\s?)+$";
 	public static final String SURNAME_REGEX = "^([A-Za-zÇĞİÖŞÜçğıöşü]{2,}\\s?)+$";
